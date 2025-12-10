@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+
+# PyInstaller files
+build/
+dist/
+*.spec
+
+# Output files from crawler
+*.csv
+images_*/
