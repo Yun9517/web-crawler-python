@@ -98,8 +98,8 @@ def save_text_results(results, target_url):
     save_choice = input("您要將結果儲存為檔案嗎？ (y/n): ").lower()
     if save_choice == 'y':
         try:
-            # Define the output directory for CSV files
-            output_dir = os.path.join('dist', 'csv')
+            # Define the output directory for CSV files, making the path absolute
+            output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'dist', 'csv'))
             os.makedirs(output_dir, exist_ok=True)
 
             timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -167,7 +167,7 @@ def save_images(image_urls, base_url):
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
         # Create a dedicated, timestamped folder inside 'dist/image'
-        base_image_dir = os.path.join('dist', 'image')
+        base_image_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'dist', 'image'))
         dir_name = os.path.join(base_image_dir, f"images_{domain}_{timestamp}")
         
         os.makedirs(dir_name, exist_ok=True)

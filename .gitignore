@@ -13,3 +13,6 @@ dist/
 # Output files from crawler
 *.csv
 images_*/
+
+# API Keys and Secrets
+.env
